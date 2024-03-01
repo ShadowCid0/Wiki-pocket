@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap");
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    block-size: 100vh;
+    display: grid;
+    place-content: center;
+    gap: 1rem;
+    font-family: "Lato", sans-serif;
+    background-color: #efefef;
+}
+#video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+#video {
+    min-width: 100%; 
+    min-height: 100%; 
+    width: auto; 
+    height: auto; 
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+}
+
+.text-container {
+    display: flex;
+    justify-content: center;
+    block-size: min(10rem, 23vw);
+    min-inline-size: 22.5rem;
+}
+
+.text-stroke {
+    font-size: 50px;
+    letter-spacing: 4px;
+    fill: none;
+    stroke: #000;
+    stroke-width: 2;
+    stroke-dasharray: 100%;
+    stroke-dashoffset: 100%;
+    animation: textStrokeAnim 4000ms linear both;
+    animation-iteration-count: 1;
+}
+
+.start {
+    width: max-content;
+    margin-inline: auto;
+    padding: 0.5em 1.25em;
+    font-size: 1.5rem;
+    border-radius: 1rem;
+    border: 0;
+    position: relative;
+    background-color: hsl(49deg, 100%, 62%);
+    color: #555;
+}
+
+.start::after,
+.start::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    transition: all 66ms ease;
+}
+
+.start::after {
+    box-shadow: 0 0.25rem 0.5rem #0003, -0.124rem 0.5rem 0.45rem #0002;
+    opacity: 1;
+}
+
+.start::before {
+    box-shadow: inset 0 1px 0.5px 0px #777, inset 0 -2px 0.5px 0px #fff9,
+        inset 0 4px 10px 0px #0007, inset 0 -4px 16px 0px #fff7;
+    opacity: 0;
+}
+
+.start:focus-visible {
+    outline: 2px solid #0ebeff;
+    outline-offset: 1px;
+}
+
+.start:active {
+    scale: 0.98;
+}
+
+.start:is(:active, :focus-visible)::after {
+    opacity: 0;
+}
+
+.start:active::before {
+    opacity: 1;
+}
+
+@keyframes textStrokeAnim {
+    0% {
+        stroke-dasharray: 100%;
+        stroke-dashoffset: 100%;
+        fill: #0000;
+    }
+    95% {
+        stroke-dasharray: 0%;
+        stroke-dashoffset: 90%;
+        fill: #0000;
+    }
+    100% {
+        stroke-dasharray: 0%;
+        stroke-dashoffset: 0%;
+        fill: #9b9dad;
+        filter: drop-shadow(2px 2px 10px #0007);
+    }
+}
