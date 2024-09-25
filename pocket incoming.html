@@ -1,0 +1,41 @@
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Pocket Incoming</title>
+  <link rel="stylesheet" href="./Start.css">
+  <link rel="icon" href="pikachu.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+</head>
+<body>
+
+  <audio id="myAudio">
+    <source src="link-start.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+<div id="video-container">
+  <video id="video" autoplay loop muted preload="metadata">
+      <source src="bg.mp4" type="video/mp4">
+      <!-- Vous pouvez ajouter des sources pour différents formats de vidéo -->
+      Votre navigateur ne supporte pas la lecture de vidéos.
+  </video>
+</div>
+
+<main class="text-container">
+    <svg class="text-stroke" viewBox="0 0 500 100" width="80%" height="100%">
+        <text class="text" x="20" y="75">Pocket Incoming</text>
+    </svg>
+</main>
+<button class="start">Allons-y !</button>
+
+  <script  src="./Start.js"></script>
+
+</body>
+</html>
